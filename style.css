@@ -1,0 +1,1113 @@
+/*global styles*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #8400ff #080808;
+}
+
+/*smooth scroll dehavior*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{ /* set background color and text color*/
+    background: #080808;
+    color: #fff;
+}
+
+#header { /* full screen background image*/
+    width: 100%;
+    height: 100vh;
+    background-image: url("./New_folder/backdrp.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#header-2{ /* Full-width container for header content */
+    width: 100%;
+}
+
+.container{ /* centering the content*/ 
+    padding: 10px 5%;
+    margin: 0 auto;
+}
+
+#header .container *:not(span) { /* set color of the header container except span */
+    color: #ffffff;
+}
+
+nav{ /*navigation bar styles*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: z-index 1;
+}
+
+.logo{ /* logo style*/
+    width: 200px;
+    margin-top: 10px;
+}
+
+nav ul li { /* naking navigation bar in same line */
+    display: inline;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{ /* navigation bar link style*/
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{ /* navigation bar link hover effect*/
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #8400ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{ /* navigation bar link hover effect*/
+    width: 100%;
+}
+
+.header-text{ /* header text style*/
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1{ /* header text style with shadow*/
+    font-size: 60px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 2px hsl(0, 0%, 0%, 0.75);
+}
+
+.header-text h1 span{ /* chnage color of the header text*/
+    color: #8400ff;
+}
+
+#about{ /* about section style with tansition */
+    margin-top: 80px;
+    color: #ababab;
+    transition: all 0.5s ease-in-out;
+}
+
+#about .row{ /* Arranges about section content in flexible rows */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-1st{ /* control the layout of elements within a flex container,*/
+    flex-basis: 35%;
+}
+
+.about-1st img{ /* image styles */
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-2nd-col{ /* control the layout of elements within a flex container,*/
+    flex-basis: 60%;
+    margin-bottom: 20px;
+}
+
+.about-2nd-col h1{ /* heading style*/
+    font-weight: 600;
+    color: #8400ff;
+}
+
+.about-2nd-col p{ /* paragraph style*/
+    margin-top: 20px;
+}
+
+.tab-titles div:nth-child(2){ /* Colors the second tab title */
+    color: #8400ff;
+}
+
+.sub-title{ /* General sub-title styling */
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{ /* Flex layout for tab titles */
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links a { /* Styling for links inside tabs */
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.tab-links a:hover {/* Hover effect for tab links */
+    color: #fff; 
+}
+
+.tab-links{/* Base styling for individual tab links */
+    margin-right: 50px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    cursor: pointer;
+    position: relative;
+    color: white;
+}
+
+.tab-links::after{/* Creates an underline effect on tab links */
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #8400ff;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links:hover::after{/* Expands underline on hover */
+    width: 100%;
+}
+
+.repeat {/* Creates a moving text effect */
+    position: absolute;
+    padding-bottom: 70px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+/* Animation for the moving text */
+.repeat span {/* Styles each repeating span */
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 600;
+    color: #ffffff96;
+    letter-spacing: 5px;
+    padding-left: 100%;
+    animation: repeat 20s linear infinite;
+    background: linear-gradient(rgba(255,255,255,1)20%, transparent 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hides actual text color to display only gradient */
+}
+
+@keyframes repeat { /* Defines the repeat animation */
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+.allign{ /* Flex container aligning items with spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.row2{ /* Responsive row layout for blog items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: calc(-1* var(1.5rem0));
+    margin-right: calc(-.5* var(0));
+    margin-left: 20px;
+}
+
+.span-text{ /* Styling for span elements in blog text */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.span-text span{
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+}
+
+[date="true"]{
+    color: #ffffff;
+}
+
+.span-text img{ /* Margin adjustment for image in blog text */
+    margin-right: 5px;
+}
+
+.col-lg0-8{ /* Flex container for blog items */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.detail-container .post-pic{ /* Styling for blog post images */
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.detail-container:nth-child(1) { /* Styling for the first blog post */
+    background-color: rgba(132, 0, 255, 0.15); /* Adds a slightly darker semi-transparent background */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Adds shadow to the second blog post */
+}
+
+.post-pic img{ /* Image styling for blog posts */
+    width: 100%;
+    border-radius: 10px;
+}
+
+.detail-container{ /* Flex container for blog post details */
+    flex: 1;
+    max-width: 60%;
+}
+
+.blog-container{ 
+    padding: 40px 0%;
+    position: relative;
+}
+
+.post-title{ /* Styling for blog post titles */
+    font-family: "sora", sans-serif;
+    font-size: 30px;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.post-title::before{ /* Creates an underline effect for blog post titles */
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: #8400ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+.readings{ /* Styling for the content */
+    width: 100%;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.read-more{ /* Styling for the read more button */
+    margin-top: 20px;
+    text-decoration: none;
+    gap: 10px;
+    line-height: 1;
+    color: #ffffff;
+    text-transform: capitalize;
+    background-size: 200%;
+    background-image: linear-gradient(to right, #8400ff 0%, #25003a 51%, #8400ff 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 17px 35px;
+    transition: all 0.3s ease 0s;
+}
+
+.read-more a{ /* Styling for the read more link */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.heading-blog{ /* Styling for the blog heading */
+    font-size: 50px;
+    background: linear-gradient(to right, #8400ff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.right blockquote{ /* Styling for blockquotes */
+    background-color: #21002b;
+    max-width: 100%;
+    padding: 40px 30px;
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.right p{ /* Styling for paragraph text */
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.right-column { /* Flex container for the right column */
+    display: flex;
+    flex-direction: column;
+    max-width: 35%;
+    margin: 0 0 1rem;
+    margin-right: 20px;
+}
+
+.right{ 
+    margin-bottom: 20px;
+}
+
+.contact-section{ /* Styling for the contact section */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.co-container{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.form-row{ 
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60%;
+    flex: 1;
+    margin: 20px 20px 40px 20px;
+}
+
+.contact-form{ /* Styling for the contact form */
+    background: #140c1c;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.section-header{ /* Styling for section headers */
+    margin-bottom: 25px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.header-title{ /* Styling for the header title */
+    font-size: 40px;
+    background: linear-gradient(to right, #8400ff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.header-title h2 + .info { /* Styling for the info section */
+    border-top: 2px solid #00ff15;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.section-header p{ /* Styling for the section header paragraph */
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.box{ /* Flex container for the contact form */
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+.box-bundle{ 
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.form-group{ 
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.form-group button { /* Styling for form elements */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8400ff;
+    border-radius: 5px;
+    background: #140c1c;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.form-group input:valid { /* Styling for valid form elements */
+    border-color: green;
+}
+.form-group input:invalid {    /* Styling for invalid form elements */
+    border-color: red;
+}
+
+.box-bundle2{ 
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+form-btn{ /* Styling for the form button */
+    padding: 20px 35px;
+}
+
+.submit-btn{ /* Styling for the submit button */
+    margin-top: 20px;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    gap: 10px;
+    line-height: 1;
+    color: #ffffff;
+    text-transform: capitalize;
+    background-size: 200%;
+    background-image: linear-gradient(to right, #8400ff 0%, #25003a 51%, #8400ff 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 17px 35px;
+    transition: all 0.3s ease 0s;
+}
+
+.con-details{ 
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 41%; /* Adjust width as needed */
+    padding: 20px;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+.info{ 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.details{ 
+    padding-left: 75px;
+    margin-bottom: 70px;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    position:  relative !important;
+    display: flex !important;
+    gap: 15px;
+}
+
+:root {    /* Root variables for gradient colors */
+    --gradient-start: #25003a;
+    --gradient-end: #8400ff;
+}
+
+.icon-box{ /* Styling for the icon box */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(161deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 50px; /* Should match the height for centering */
+    font-size: 20px;
+}
+
+.text-box p{ /* Styling for the text box */
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.info li{ /* Styling for the list items */
+    text-align: center;
+}
+
+.allign-blog-2{ /* Flex container aligning items with spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.row2-blog-2{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: calc(-1* var(1.5rem0));
+    margin-right: calc(-.5* var(0));
+    margin-left: 20px;
+}
+
+.span-text-blog-2{ 
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.span-text-blog-2 span{  /* Styling for span elements in blog text */
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+}
+
+.span-text-blog-2 img{  /* Margin adjustment for image in blog text */
+    margin-right: 5px;
+}
+
+.col-lg0-8{  
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.detail-container-blog-2 .post-pic-blog-2{  /* Styling for blog post images */
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.post-pic-blog-2 img{ /* Image styling for blog posts */
+    border-radius: 10px;
+}
+
+.detail-container-blog-2{ /* Flex container for blog post details */
+    flex: 1;
+    max-width: 60%;
+}
+
+.blog-container-blog-2{ 
+    padding: 40px 0%;
+    position: relative;
+}
+
+.post-title-blog-2{ /*use separate fonts for post-titles*/
+    font-family: "sora", sans-serif;
+    font-size: 30px;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    
+}
+
+.post-title-blog-2::before{ /* Creates an underline effect for blog post titles */
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: #8400ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+.readings-blog-2{ 
+    width: 100%;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.heading-blog-2 { /* Styling for the blog heading */
+    font-size: 50px;
+    background: linear-gradient(to right, #8400ff 10%, #ffffff 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures the heading is centered within the full width of its container */
+}
+
+.repeat-2 span { /* Creates a moving text effect */
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+}
+
+#about-2{ /* about section style with tansition */
+    margin-top: 80px;
+    color: #ababab;
+    transition: all 0.5s ease-in-out;
+}
+
+.row-2{ 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.about-1st-col-2{ 
+    flex-basis: 35%;
+}
+
+.about-1st-col-2 img{ 
+    width: 80%;
+    border-radius: 15px;
+    margin-left: 120px;
+}
+
+.about-2nd-col-2{   
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    padding: 50px 20px;
+    background-color: #140c1c;
+    width: 100%;
+    margin-top: 40px;
+    flex-basis: 60%;
+    margin-bottom: 20px;
+}
+
+.about-2nd-col-2 h1{
+    font-weight: 600;
+    color: #8400ff;
+}
+
+.about-2nd-col-2 p{
+    margin-top: 20px;
+}
+
+.sub-title-2{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Style for the entire skills section */
+.skills-section-2 {
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    padding: 50px 20px;
+    background-color: #140c1c;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Heading and subheading */
+.skills-section-2 h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #a020f0;
+}
+
+.skills-section-2 p {
+    font-size: 1em;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+/* Skills grid layout */
+.skills-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Style for individual skill box */
+.skill-box-2 {
+    background-color: #1c0b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* Hover effect */
+.skill-box-2:hover {
+    transform: translateY(-10px);
+}
+
+/* Icon inside skill box */
+.skill-icon-2 {
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+/* Skill name and percentage */
+.skill-percentage-2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #a020f0;
+    margin: 10px 0;
+}
+
+.skill-name-2 {
+    font-size: 1em;
+    color: #ddd;
+}
+
+.container-2 h2{
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+/* Resume Section Styling */
+.resume-section-2 {
+    margin-top: 40px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.sub-title-2-2 { /* Subtitle styling */
+    font-size: 60px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #8400ff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    gap: 15px;
+}
+
+.resume-container-2 { /* Container for resume items */
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.resume-column-2 {
+    flex: 1;
+    padding: 20px;
+}
+
+.resume-column-2 h2 {
+    color: #ddd;
+    font-size: 2.0em;
+    margin-bottom: 40px;
+}
+
+.resume-item-2 {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.icon-2 img {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    filter: invert(1); /* Makes icons white */
+}
+
+.resume-details-2 {
+    text-align: left;
+}
+
+.date-2 { /* Date styling */
+    color: #a020f0;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.resume-item-2 h3 {
+    color: #ffffff;
+    font-size: 1em;
+    margin: 0;
+}
+
+.resume-item-2 p {
+    color: #a9a9a9;
+    font-size: 0.85em;
+    margin: 2px 0 0;
+}
+
+.resume-details-2 ul li{
+    font-size: 0.85em;
+}
+
+/* Add timeline dots and line */
+.resume-item-2::before { 
+    content: "";
+    position: absolute;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #a020f0;
+    border-radius: 50%;
+}
+
+.resume-item-2::after { 
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 25px;
+    width: 2px;
+    height: calc(100% - 25px);
+    background-color: #a020f0;
+}
+
+.ul-arrange{ 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social-links{ 
+    gap: 30px;
+    position: absolute;
+    top: 70%;
+    right: 20px;
+}
+
+.social{ /* making circle around the img*/
+    color: #8750f7;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #8750f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.social:hover{ /* hover effect for social links */
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.social a[target="-blank"]{
+    color: #8750f7;
+}
+
+.img-s{
+    width: 18px;
+    
+}
+
+.social-links li:first-child {
+    margin-left: 0;
+}
+
+.social-links li:nth-child(2) {
+    color: #000000;
+}
+
+/*----------------------------------*/
+
+#menu-toggle{ /* hide the checkbox */
+    display: none;
+}
+
+.menu-icon{ /* menu icon style */
+    display: none;
+    cursor: pointer;
+}
+
+.close-icon{  /* close icon style */
+    display: none;
+    cursor: pointer;
+    top: 25px;
+    right: 25px;
+    position: absolute;
+}
+
+@media only screen and (max-width: 600px) { /* media query for mobile view */
+    #header{
+        background-image: url(./New_folder/backdrp.png);
+    }
+
+    .header-text{
+        margin-top: 65%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .container > nav ul{
+        background: #a020f065;
+        border-radius: 5px;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 50vh;
+        padding-top: 50px;
+        margin-left: 0;
+        transition: right 0.3s ease;
+        z-index: 10;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+
+    #menu-toggle:checked ~ ul{
+        right: 0;
+    }
+
+    #menu-toggle:checked ~ ul .close-icon{
+        display: block;
+    }
+
+    #menu-toggle:checked + .menu-icon{
+        display: none;
+    }
+
+    .repeat span{
+        font-size: 80px;
+    }
+
+    .about-2nd-col-2{
+        flex-direction: column;
+        margin-top: 200px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .sub-title{
+        font-size: 40px;
+    }
+
+    .about-1st-col-2 img{
+        width: 100%;
+        margin-left: 150px;
+    }
+
+    .about-2nd-col-2{
+        position: relative;
+        left: 12%;
+        transform: translateX(-50%);
+        width: 90%;
+        margin-top: 250px;
+        text-align: center;
+    }
+
+    .about-2nd-col p{
+        font-size: 15px;
+        margin-bottom: -20px;
+    }
+
+    .about-2nd-col .tab-titles{
+        margin-bottom: -20px;
+    }
+
+    .allign{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .heading-blog{
+        font-size: 40px;
+        margin-top: 0;
+    }
+
+    .span-text span{
+        font-size: 14px;
+    }
+
+    .post-title{
+        font-size: 20px;
+    }
+
+    .readings{
+        font-size: 15px;
+    }
+
+    .right blockquote{
+        font-size: 13px;
+    }
+
+    .right p{
+        font-size: 10px;
+    }
+
+    .right .read-more{
+        font-size: 10px;
+        padding: 10px 7px;
+    }
+
+    .con-details ul {
+        display: block;
+        width: 100%;
+        margin-left: -200%;
+        margin-top: 680px;
+    }
+
+    .text-box p{
+        font-size: 15px;
+    }
+
+    .info img{
+        width: 20px;
+    }
+
+    .skill-percentage-2{
+        font-size: 5px;
+    }
+    
+}
+
